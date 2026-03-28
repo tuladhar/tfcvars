@@ -5,21 +5,21 @@
 # hostname: https://app.terraform.io   # optional; default from TFC_ADDRESS or TFC public cloud
 token: your-terraform-cloud-api-token
 
-org: covergo
+org: your-org
 
 workspaces:
-  - name: aws-covergo-cloud-ap-southeast-1-dev
+  - name: aws-dev
     variables:
-      - key: slack_api_url_distribution
+      - key: secret_key1
         value: secret123
-      - key: slack_api_url_ai
+      - key: secret_key2
         value: secret123
         # category: terraform   # default terraform; use env for environment variables
         # sensitive: true       # default true
         # hcl: false            # default false
         # description: Slack webhook for distribution alerts
 
-  # - name: aws-covergo-cloud-ap-southeast-1-qa
+  # - name: aws-uat
   #   org: other-org          # optional; defaults to top-level org
   #   variables:
   #     - key: slack_api_url_distribution
