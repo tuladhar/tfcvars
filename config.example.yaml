@@ -1,0 +1,26 @@
+# Copy to config.yaml. Run: tfcvars -f config.yaml   (or: go run . -f config.yaml)
+# Do not commit files that contain a real token.
+# If token is omitted, TFC_TOKEN / TF_TOKEN is used instead.
+#
+# hostname: https://app.terraform.io   # optional; default from TFC_ADDRESS or TFC public cloud
+token: your-terraform-cloud-api-token
+
+org: covergo
+
+workspaces:
+  - name: aws-covergo-cloud-ap-southeast-1-dev
+    variables:
+      - key: slack_api_url_distribution
+        value: secret123
+      - key: slack_api_url_ai
+        value: secret123
+        # category: terraform   # default terraform; use env for environment variables
+        # sensitive: true       # default true
+        # hcl: false            # default false
+        # description: Slack webhook for distribution alerts
+
+  # - name: aws-covergo-cloud-ap-southeast-1-qa
+  #   org: other-org          # optional; defaults to top-level org
+  #   variables:
+  #     - key: slack_api_url_distribution
+  #       value: https://hooks.slack.com/...
